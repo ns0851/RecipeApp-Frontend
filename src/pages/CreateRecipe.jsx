@@ -29,7 +29,7 @@ const CreateRecipe = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault()
     try {
-      await axios.post("http://localhost:3001/recipes/", formData)
+      await axios.post("https://recipe-app-backend-rho.vercel.app/recipes/", formData)
       alert("Created")
       navigate('/')
     } catch (error) {

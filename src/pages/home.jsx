@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/recipes/");
+        const response = await axios.get("https://recipe-app-backend-rho.vercel.app/recipes/");
         setRecipes(response.data);
       } catch (error) {
         console.error(error);
@@ -22,7 +22,7 @@ const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          `https://recipe-app-backend-rho.vercel.app/recipes/savedRecipes/ids/${userID}`
         );
 
         // Initialize savedMap with saved recipes
@@ -43,7 +43,7 @@ const Home = () => {
   const saveRecipe = async (recipeID) => {
     try {
       await axios.put(
-        "http://localhost:3001/recipes/",
+        "https://recipe-app-backend-rho.vercel.app/recipes/",
         { recipeID, userID },
         { headers: { authorization: cookies.access_token } }
       );
